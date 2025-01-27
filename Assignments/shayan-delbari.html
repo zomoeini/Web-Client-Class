@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 04 - Bootstrap</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="my-4">
+        <h1 class="text-center">Assignment 04 - Bootstrap</h1>
+      </header>
+
+      <section>
+        <h2>Introduction</h2>
+        <p>
+          This assignment demonstrates the use of Bootstrap to create a
+          responsive web page.
+        </p>
+      </section>
+
+      <section>
+        <h2>Grid System</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="p-3 border bg-light">Column 1</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border bg-light">Column 2</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border bg-light">Column 3</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Buttons</h2>
+        <button type="button" class="btn btn-primary">Primary Button</button>
+        <button type="button" class="btn btn-secondary">
+          Secondary Button
+        </button>
+      </section>
+
+      <section>
+        <h2>Forms</h2>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
