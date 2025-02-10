@@ -1,100 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore the world</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" contents="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2 id="demo">Hello</h2>
+        <p id="demo2">This is my first code in JS</p>
+        <p id="demo3"></p>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+        <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello, I love JS'">Change the text</button>
+        <button type="button" onclick="document.getElementById('demo2').innerHTML = 'This is my second time using JS'">Change text</button>
+        <button type="button" onclick="document.getElementById('demo3').innerHTML = 'Bye Bye'">Exit</button>
+
+        <br><br><br>
+        <button type="button" onclick="document.getElementById('demo').style.fontSize = '30px'">Change font size</button>
+        <button type="button" onclick="document.getElementById('demo2').style.fontFamily ='Franklin Gothic Medium, Arial Narrow, Arial, sans-serif'">Change the font family</button>
+        <!-- change the color -->
+         <button type="button" onclick="document.getElementById('demo').style.color = 'red'">Change Color</button>
     
-    <header class="bg-primary text-white text-center py-4">
-        <h1>explore the world</h1>
-        <p>discover and experience new things</p>
-    </header>
+         <!--Change display -->
+         <!--Hide and show the element content -->
+         <br><br><br>
+         <button type="button" onclick="document.getElementById('demo').style.display='none'">Hide me</button>
+         <button type="button" onclick="document.getElementById('demo').style.display='block'">Show me</button>
+    
+         <!-- function and how we call the functions -->
+          <br><br><br>
+          <button type="button" onclick="myFunction()">Change Heading Font by function</button>
+          <p id="myCalcul"></p>
+          <button type="button" onclick="showCalcul()">Show Number</button>
+        <script>
 
-    <div class="container my-4">
-        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#whyTravel" aria-expanded="false" aria-controls="whyTravel">
-            Why Travel?
-        </button>
-        <div class="collapse mt-3" id="whyTravel">
-            <p>traveling allows a person to explore the unknown</p>
-        </div>
-    </div>
+console.log("Hello, JavaScript");
+        let x = 5;
+        console.log(x);
+        var text ="Alice"; // Old way (avoid using var)
+        let age = 25; 
 
-    <div id="travelCarousel" class="carousel slide container" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://cdn.britannica.com/31/255531-050-B7E07090/eiffel-tower-paris-france-champ-de-mars-view.jpg" class="d-block w-100" alt="Paris">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Paris</h5>
-                    <p>paris</p>
-                </div>
-            </div>
-            <div class="carouse-item">
-                <img src="https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty.jpg" class="d-block w-100" alt="New York">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>New York</h5>
-                    <p>newyork</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://media.cntraveller.com/photos/6343df288d5d266e2e66f082/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg" class="d-block w-100" alt="Tokyo">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Tokyo</h5>
-                    <p>tokyo</p>
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#travelCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#travelCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+        let name = "Alice"; //String
+        let num = 100; //Number
+        let isActive = true; //Boolean 
+        let value ; // Undefined 
+        let empty = null;// Null 
+        // combine text + variable 
+        console.log(name + "," + num+ ","+ isActive + "," + value+ ","+empty);
+        // Arithmetic operations (+,-+*,/,..)
+        //comparison == , === , != > < ,... result is true or false 
+        //logical operations && || result is true or false
 
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://www.cia-france.com/media/1803/paris-louvre_1100x700.jpeg" class="card-img-top" alt="Paris">
-                    <div class="card-body">
-                        <h5 class="card-title">Paris</h5>
-                        <p class="card-text">paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/471000/471585-New-York.jpg" class="card-img-top" alt="New York">
-                    <div class="card-body">
-                        <h5 class="card-title">New York</h5>
-                        <p class="card-text">newyork</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2023/09/fuji-cherry-GettyImages-1060517676-1024x600.jpeg" class="card-img-top" alt="Tokyo">
-                    <div class="card-body">
-                        <h5 class="card-title">Tokyo</h5>
-                        <p class="card-text">tokyo</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        let a = 10;
+        let b = 5;
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>happy travels! contact us at <a href="mailto:travel@example.com" class="text-white">travel@example.com</a></p>
-    </footer>
-</body>
+        console.log(a + b);//Arithmetic
+        console.log(a > b); //comparison- true
+        console.log(a > 4 && b < 2) //logical - false
+
+        // constant value 
+        const pi = 3.14;
+        const schoolName = "College LaSalle";
+       
+        let score = 80;
+        if(score >= 90) {
+            console.log("Grade A");
+        }else if (score >= 70) {
+            console.log("Grade B");
+        }else {
+            console.log("Grade C");
+        }
+
+        
+ 
+        //Switch Statment
+        let day ="Monady";
+        switch(day) {
+            case "Monady":
+                console.log("Start of the week!");
+                break;
+            case "Friday":
+                console.log("Weekend is near!");
+                break;
+            default:
+            console.log("A regular Day");
+        }
+ 
+        // Loops
+        for(let i=1; i<= 5 ; i++) {
+            console.log("Iteration" + i);
+        }
+ 
+        // while loop
+        let count =0;
+        while(count < 5) {
+            console.log("Count : " + count);
+        }
+
+        let myCollege = "Lasalle College"
+        function myName(){
+            let myName = "Max";
+            console.log("My name is: " + myName + "and I study comp sci in " + myCollege)
+        }
+
+        let myIntroName = "Max Chiang"
+        function myIntroduction(){
+            let myAge = "19";
+            let myHobby = "Snowboarding";
+            console.log("My name is " + myIntroName + ", Im 19 years old this year and I love " + myHobby)
+        }
+
+        </script>
+    </body>
 </html>
