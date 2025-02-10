@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First JavaScript File </title>
+    <link rel="stylesheet" href="style.css">
+    <!--JavaScript-->
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--Java(Back-end) with JavaScript(making web page Front-end)
+    JavaScript allows developers to create dynamic content, animations form validation , real-time update ,... -->
+    <!--Key features in JavaScript
+    1-Cient-Side Execution - Runs directly in the user's web Browser
+    2-Dynamic and Loosely Types - Variables can hold different data Types  
+    Event- Driven - Listens to user interactions -->
+    
+    <!-- Change the appereance or change CSS, change content ,  -->
+   
+    <h2 id="demo">Hello</h2>
+    <p id="demo2">This is my first code in JavaScript</p>
+    <p id="demo3"></p>
+    <!-- Change the content-->
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello, I love JavaScript'">Change the text</button>
+    <button type="button" onclick="document.getElementById('demo2').innerHTML = 'No, This is my Second time.'">Change paragraph text</button>
+    <button type="button" onclick="document.getElementById('demo3').innerHTML = 'Bye,Bye'">Say goodbye</button>
+
+    <!--Change attribute value -->
+    <br><br><br>
+    <button type="button" onclick="document.getElementById('demo').style.fontSize = '50px'">Change font Size</button>
+    <button type="button" onclick="document.getElementById('demo2').style.fontFamily ='Franklin Gothic Medium, Arial Narrow, Arial, sans-serif'">Change the font family</button>
+    <!-- change the color -->
+     <button type="button" onclick="document.getElementById('demo').style.color = 'red'">Change Color</button>
+
+     <!--Change display -->
+     <!--Hide and show the element content -->
+     <br><br><br>
+     <button type="button" onclick="document.getElementById('demo').style.display='none'">Hide me</button>
+     <button type="button" onclick="document.getElementById('demo').style.display='block'">Show me</button>
+
+     <!-- function and how we call the functions -->
+      <br><br><br>
+      <button type="button" onclick="myFunction()">Change Heading Font by function</button>
+      <p id="myCalcul"></p>
+      <button type="button" onclick="showCalcul()">Show Number</button>
+    <script>
+        // I want to change the text inside the h2 and print Hello, I love JavaScript
+        // I want user click on the button and this text changed 
+
+        // explain the basics of javaScript 
+        //Create variables 
+        // how can I show the value 
+        // Run in the browser 
+        console.log("Hello, JavaScript");
+        let x = 5;
+        console.log(x);
+        var text ="Alice"; // Old way (avoid using var)
+        let age = 25; 
+
+        let name = "Alice"; //String
+        let num = 100; //Number
+        let isActive = true; //Boolean 
+        let value ; // Undefined 
+        let empty = null;// Null 
+        // combine text + variable 
+        console.log(name + "," + num+ ","+ isActive + "," + value+ ","+empty);
+        // Arithmetic operations (+,-+*,/,..)
+        //comparison == , === , != > < ,... result is true or false 
+        //logical operations && || result is true or false
+
+        let a = 10;
+        let b = 5;
+
+        console.log(a + b);//Arithmetic
+        console.log(a > b); //comparison- true
+        console.log(a > 4 && b < 2) //logical - false
+
+        // constant value 
+        const pi = 3.14;
+        const schoolName = "College LaSalle";
+
+        console.log(pi + " "+schoolName );
+        // control Flow (Condotional Stataments)
+        let score = 80;
+        if(score >= 90) {
+            console.log("Grade A");
+        }else if (score >= 70) {
+            console.log("Grade B");
+        }else {
+            console.log("Grade C");
+        }
+
+        //Switch Statment
+        let day ="Monady";
+        switch(day) {
+            case "Monady":
+                console.log("Start of the week!");
+                break;
+            case "Friday":
+                console.log("Weekend is near!");
+                break;
+            default:
+            console.log("A regular Day");
+        }
+
+        // Loops 
+        for(let i=1; i<= 5 ; i++) {
+            console.log("Iteration" + i);
+        }
+
+        // while loop
+        let count =0;
+        while(count < 5) {
+            console.log("Count : " + count);
+            count++;
+        }
+
+        let myCollege = "LaSalle College";
+        function myName(){
+            let myName = "Mary";
+            console.log("My Name is: " + myName + " And I study computer science in " + myCollege)
+        }
+
+        // call my function 
+        myName();
+    </script>
+</body>
+</html>
