@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+    constructor(name, age, email, birthdate) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.birthdate = birthdate; // Format: "YYYY-MM-DD"
+    }
+
+    introduce() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old. Contact me at ${this.email}.`);
+    }
+
+    // Arrow function version
+    introducePerson = () => {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old. Contact me at ${this.email}.`);
+    }
+
+    // Corrected Birthday Check
+    celebrateBirthday() {
+        const today = new Date();
+        const birthDate = new Date(this.birthdate);
+
+        console.log(`Checking birthday for: ${this.name}`);
+        console.log(`Today's Date: ${today.getDate()}-${today.getMonth()+1}`);
+        console.log(`Birthdate: ${birthDate.getDate()}-${birthDate.getMonth()+1}`);
+
+        if (today.getDate() === birthDate.getDate() && today.getMonth() === birthDate.getMonth()) {
+            this.age++;
+            console.log(`🎉 Happy Birthday, ${this.name}! You are now ${this.age} years old! 🎂`);
+        } else {
+            console.log(`❌ Sorry, today is not your birthday, ${this.name}.`);
+        }
+    }
+}
+
+const today = new Date().toISOString().split('T')[0];
+
+const person1 = new Person("Alice", 30, "alice@gmail.com", "2024-02-17"); // Birthday today
+const person2 = new Person("Jack", 22, "jack@hotmail.com", "2002-03-07");
+const person3 = new Person("Charlie", 40, "charl@yahoo.com", "1984-12-25");
+
+console.log("\nChecking birthdays today:");
+person1.celebrateBirthday(); // Should detect birthday
+person2.celebrateBirthday(); // Should not detect birthday
+person3.celebrateBirthday(); // Should not detect birthday
+
+    </script>
+</body>
+</html>

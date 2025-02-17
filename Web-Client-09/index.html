@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+
+    <script>
+        // Step1: Define The person Class
+        class Person {
+            constructor(name,age,email,birthdate) {
+                this.name = name,
+                this.age = age,
+                this.email = email,
+                this.birthdate = birthdate // Format : "YYYY-MM-DD"
+            }
+
+            //Methods
+            introduce() {
+                console.log("Hello, my name is "+ this.name + 
+                    " and I am "+ this.age + " Years Old" + " Contact me at " + this.email);
+            }
+
+            // Arrow functions 
+            inrtuducePerson = () => {
+                console.log("Hello, my name is "+ this.name + 
+                "and I am "+ this.age + " Years Old" + " Contact me at " + this.email);
+            }
+
+            //Method to check if today is their birthday 
+            celebrateBirthday() {
+                // I should have value for toDay 
+                const today = new Date(); //  new object of Date class , create an object with today data 
+                //console.log(today.getDay() + today.getMonth()+ today.getFullYear());
+
+                // Javascript is 0 , 1 , 2 based 
+                // JavaScript consider jan 0 , feb 1 , march 2 
+                const todayMounth = today.getMonth() + 1;
+                console.log(today.getDate() + " " +todayMounth);
+                // I need birthdate data 
+                const birthDate =  new Date(this.birthdate);
+                if (today.getDate() === birthDate.getDate() && todayMounth === birthDate.getMonth()) {
+                    this.age++;
+                    console.log(` Happy Birthday, ${this.name}! You are now ${this.age} years old! `);
+                } else {
+                    console.log(` Sorry, today is not your birthday, ${this.name}.`);
+                }
+
+            }
+        }
+        // I want to create group of people 
+        // remove some people 
+        // add another person 
+        // map() transfer the position or the name of the person 
+        // filter()
+        // push ()
+        //map() 
+
+        class PersonGroup {
+            constructor() {
+                this.people =[]; // stores person objects 
+            }
+
+            //Methods
+            addPerson(person) {
+                this.people.push(person);
+            }
+
+            // Remove a person by name using filter() 
+            removePerson(name) {
+                //only show and consider people who's name is not "Jack"
+                this.people= this.people.filter(person => person.name !== name);
+            }
+
+            //Get only names using map()
+            getAllNames() {
+                // create new array or modify  that has only names 
+                return  this.people.map(person =>person.name);
+            }
+
+            // Filter people by age 
+            getPeopleAboveAge(ageLimit) {
+                return this.people.filter(person => person.age > ageLimit);
+            }
+
+            //Display all people in group 
+            allPeople() {
+                console.log("\n Group Members:");
+                this.people.forEach(person => person.introduce());
+            }
+        }
+        
+        //Step 2: Create Person objects with birthdate 
+        const person1 = new Person("Alice", 30, "alice@gmail.com", "1994-02-17");
+        const person2 = new Person("Jack",22,"jack@hotmail.com" , "2002-03-07");
+        const person3 = new Person ("Charlie",40, "charl@yahoo.com","1984-12-25");
+
+        // Add people to the group 
+        const group = new PersonGroup();
+        group.addPerson(person1);
+        group.addPerson(person2);
+        group.addPerson(person3);
+        
+        group.allPeople();
+
+        group.removePerson(person1.name);
+
+        group.allPeople();
+
+       console.log(group.getAllNames());
+
+        // introduce persons 
+       /*nsole.log("\n Meet new people");
+        person1.introduce();
+        person2.introduce();
+        person3.introduce();
+
+        // test Celebrate Birthday 
+        console.log("\nChecking birthdays today:");
+        person1.celebrateBirthday();
+        person2.celebrateBirthday();
+        person3.celebrateBirthday();*/
+
+        var ageLimit = 22;
+        console.log(group.getPeopleAboveAge(ageLimit));
+    </script>
+</body>
+</html>
