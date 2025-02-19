@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Managmnet</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Library Managment System</h1>
+
+        <!--Book Form-->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>Add a new Book</h5>
+            </div>
+            <div class="card-body">
+                <form id="bookForm">
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <input type="text" id="title" class="form-control" placeholder="Title" required> 
+                            <!--Enter the data is Mandatory It is validation-->
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="author" class="form-control" placeholder="Author" required>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" id="year" class="form-control" placeholder="Year Published">
+                        </div>
+                        <div class="col-md-3 d-grid">
+                            <button type="submit" class="btn btn-success">Add Book</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--Book List Display -->
+        <div class="book-list mt-4">
+            <h4>All Books</h4>
+            <div id="booksContainer" class="row"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
