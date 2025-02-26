@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: blue;
+}
+
+h1{
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 4px;
+}
+
+.container{
+    text-align: center;
+}
+
+/* it is important!
+for each instrument I want to generate btn and for each btn I want to assign picture 
+I want to change  the background image for each btn */
+.btnStyle{
+    padding: 30px 50px;
+    background-color: white;
+    border:none;
+    margin:10px;
+    font-size: 30px;
+    min-width : 200px;
+    border-radius: 10px;
+    background-image:url("images/tom.png");
+    background-size: cover;
+    color:black;
+    font-family: cursive;
+    cursor:pointer;
+}
+
+.btnStyle:hover {
+    color:red;
+}
