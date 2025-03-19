@@ -1,0 +1,4 @@
+.error {
+    color:red;
+    display: none; /* no display at the first time or hidden by default*/
+}

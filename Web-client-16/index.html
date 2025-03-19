@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query form validation Example</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Subscribe to Newsletter</h2>
+    <form id="subscribeForm">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email">
+        <!--space or span or p for error Message if sth is wrong I will show the error message -->
+        <span class="error" id="emailError">Please enter a valid email address.</span>
+
+        <br><br>
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
