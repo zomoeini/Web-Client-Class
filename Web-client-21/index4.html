@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+</head>
+<body>
+    <h1 id="greeting">Dear user, Welcome Back </h1>
+
+    <script>
+      function updateMessage() {
+        // first I should read the sessionStorage data  and save in variable
+        const username = sessionStorage.getItem("username");
+
+        // I should get the element for greeting 
+        const greeting = document.getElementById("greeting");
+
+        if(username) {
+            greeting.textContent = `Dear ${username},  Welcome Back!`;
+        }else {
+            greeting.textContent = "Dear user, Welcome Back ";
+        }
+      }  
+
+      // call the function 
+      updateMessage();
+    </script>
+    <p><a href="index3.html">Go back to previous page</a></p>
+</body>
+</html>

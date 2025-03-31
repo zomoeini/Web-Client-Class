@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Examples</title>
+</head>
+<body>
+    <!-- create a from ask user to put his/her name 
+     save the name  and i will reuse it for greeting message for customize my webpage -->
+
+     <h1>LocalStorage</h1>
+     <p id="greeting">Welcome, Guest</p>
+
+     <label for="name">Enter your name</label>
+     <input type="text" id="name" placeholder="Enter your name">
+
+     <button onclick="saveName()">Save Name</button>
+     <button onclick="clearName()">Clear Name</button>
+
+     <!--I can use my localStorage and call the user with his/her first name -->
+     <p id="todoList">Guset, This is your To-Do List</p>
+
+     <script>
+        // Save name in Local Storage 
+        function saveName() {
+            const name = document.getElementById("name").value; // Get input value
+
+            // save in storage 
+            localStorage.setItem("name",name);
+            // update to do list message 
+            displayNameMessage();
+
+        }
+
+        function displayNameMessage() {
+
+            // read from localStorage 
+            const savedName = localStorage.getItem("name");
+            const greeting = document.getElementById("greeting");
+            const todoListName = document.getElementById("todoList");
+
+            // check if the name is exists and has value not null
+            if(savedName) {
+                greeting.textContent = `Hello , ${savedName}! Welcome Back`;
+                todoListName.textContent = `${savedName}, This is your To-Do List!`;
+            }else {
+                greeting.textContent = "Welcome, Guest";
+                todoListName.textContent = "Guset, This is your To-Do List";
+            }
+        }
+         
+        // clear name 
+        function clearName() {
+            localStorage.removeItem("name");
+            displayNameMessage();
+        }
+        // Display the greeting message for Guest then change it to user 
+        window.onload = displayNameMessage();
+     </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SessionStorage Example</title>
+</head>
+<body>
+    <!-- Cookie , localStorage, SessionStorage 
+       1- Storage Capacity 
+       2- Expiration 
+       LocalStorage : until manually deleted 
+       sessionStorage: until tab is closed 
+       Cookies: can be set via expires or max-age -->
+
+       <h1>SessionStorage</h1>
+       <label for="username">Enter your username</label>
+       <input type="text" id="username" placeholder="Enter your username">
+       <button onclick="userName()">Save Username</button>
+
+       <script>
+            function userName(){
+                const username = document.getElementById("username").value;
+                sessionStorage.setItem("username",username);
+
+                alert("Username is saved!");
+            }
+       </script>
+
+       <p><a href="index4.html">Go to the next page</a></p>
+</body>
+</html>

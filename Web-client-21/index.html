@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Examples</title>
+</head>
+<body>
+    <h1>Cookies Example</h1>
+    <button onclick="saveCookie()">Save Cookie</button><br><br>
+    <button onclick="readCookie()">Read Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <script>
+        // create a function , and we will save information (username , setiing for browser , .. search keywords , link for pages ...)
+       
+        // 1 step: save cookie
+        function saveCookie() {
+            document.cookie = "name=John"; // save a cookie
+            document.cookie = "Phone= (514) 999 1212";
+            alert("Cookie saved!");
+        }
+
+        // 2 step : read cookie 
+        function readCookie() {
+            alert("Cookie: "+ document.cookie); // Read cookies
+        }
+
+        // 3 step: delete cookie
+        function deleteCookie() {
+            // reset the variable and empty the cookie
+            // when it will be expired 
+            document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            document.cookie = "Phone=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            alert("Cookie deleted!");
+        }
+    </script>
+</body>
+</html>
